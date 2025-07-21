@@ -340,11 +340,17 @@ a:hover {
     .personality-text {
         order: 2; /* Text after image on small screens */
     }
-    .about-image,
-    .personality-image {
-        order: 1; /* Image before text on small screens */
-        margin-bottom: 20px;
-    }
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* For a rounded square/rectangle */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--accent-color); /* A pop of accent color around the image */
+    object-fit: cover; /* Ensures image covers the space without distortion */
+    object-position: left; /* NEW: Prioritize the left side of the image */
+    width: 300px; /* Keep fixed width */
+    height: 300px; /* Keep fixed height for a square aspect ratio */
+}
     .about-text h2 {
         text-align: center; /* Center heading on small screens */
     }
