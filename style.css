@@ -44,10 +44,10 @@ h1, h2, h3 {
     font-weight: 700; /* Ensure headings are bold */
 }
 
-/* h1 is now specific to .intro-bar h1, no longer a global large hero h1 */
+/* h1 is now specific to .hero-section h1 */
 h2 {
     font-size: 2.8em; /* Section headings */
-    text-align: left;
+    text-align: left; /* Now left-aligned by default */
     margin-bottom: 1.5em;
     padding-top: 1em; /* Space from section top */
 }
@@ -109,11 +109,11 @@ a:hover {
     background-color: #5a6268;
 }
 
-/* Navbar (unchanged - you like this!) */
+/* Navbar (unchanged) */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background for hero */
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
     padding: 15px 0;
-    position: relative; /* Changed from absolute, as no full-height hero section */
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
@@ -156,24 +156,32 @@ a:hover {
     text-decoration: none;
 }
 
-/* NEW INTRO BAR STYLES */
-.intro-bar {
-    background-color: var(--bg-light); /* This will be pure white */
-    padding: 25px 0; /* Adjust padding for desired height */
+/* NEW HERO SECTION STYLES */
+.hero-section {
+    background-color: var(--bg-dark); /* Light grey background - can be changed to var(--bg-light) for pure white */
+    min-height: 350px; /* Mid-sized height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-bottom: 1px solid #e0e0e0; /* A very subtle bottom border for separation */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Very subtle shadow for depth */
+    color: var(--text-color-dark);
+    padding: 40px 0; /* Add some padding */
 }
 
-.intro-bar h1 {
-    font-size: 2.2em; /* Smaller, to fit on one line and not be dominant */
-    color: var(--primary-color); /* Your primary blue */
-    margin: 0; /* Remove default margin to keep it compact */
-    font-weight: 700;
-    line-height: 1.2;
+.hero-section h1 {
+    font-size: 3.8em; /* Prominent headline */
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-/* REMOVED ALL PREVIOUS .hero-section and .hero-content STYLES */
+.hero-section p {
+    font-size: 1.5em; /* Tagline size */
+    max-width: 800px;
+    margin: 0 auto 30px auto; /* Centered with space below */
+    color: var(--text-color-dark); /* Ensure text color is visible on light background */
+}
+
+/* REMOVED .intro-bar styles */
 
 
 /* Sections */
@@ -215,7 +223,7 @@ a:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border: 5px solid var(--accent-color); /* A pop of accent color around the image */
     object-fit: cover; /* Ensures image covers the space without distortion */
-    object-position: left; /* NEW: Prioritize the left side of the image */
+    object-position: left; /* Prioritize the left side of the image */
     width: 300px; /* Keep fixed width */
     height: 300px; /* Keep fixed height for a square aspect ratio */
 }
@@ -318,18 +326,17 @@ a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .intro-bar h1 {
-        font-size: 1.8em; /* Smaller on mobile to try and fit */
-        line-height: 1.3; /* Allow for wrap on smaller screens if necessary */
+    .hero-section h1 {
+        font-size: 2.5em; /* Adjust for smaller screens */
+    }
+    .hero-section p {
+        font-size: 1.2em;
     }
     h2 {
         font-size: 2em;
     }
     .navbar .nav-links {
         display: none; /* Hide nav links on smaller screens for now, can implement hamburger menu later */
-    }
-    .hero-content { /* This class is no longer in use, but keeping for reference */
-        padding-top: 80px; /* Adjust for no nav */
     }
     .about-grid,
     .personality-content {
@@ -341,17 +348,11 @@ a:hover {
     .personality-text {
         order: 2; /* Text after image on small screens */
     }
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* For a rounded square/rectangle */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border: 5px solid var(--accent-color); /* A pop of accent color around the image */
-    object-fit: cover; /* Ensures image covers the space without distortion */
-    object-position: left; /* NEW: Prioritize the left side of the image */
-    width: 300px; /* Keep fixed width */
-    height: 300px; /* Keep fixed height for a square aspect ratio */
-}
+    .about-image,
+    .personality-image {
+        order: 1; /* Image before text on small screens */
+        margin-bottom: 20px;
+    }
     .about-text h2 {
         text-align: center; /* Center heading on small screens */
     }
