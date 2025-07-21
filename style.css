@@ -7,13 +7,13 @@
 
 :root {
     /* Define color palette */
-    --primary-color: #0056b3; /* A professional blue */
+    --primary-color: #004080; /* A deeper, more serious blue */
     --secondary-color: #6c757d; /* A subtle grey */
-    --accent-color: #28a745; /* A hint of vibrant green for buttons/highlights */
+    --accent-color: #e67e22; /* A more "matter-of-fact" orange/rust for highlights */
     --text-color-dark: #343a40;
     --text-color-light: #f8f9fa;
     --bg-light: #ffffff;
-    --bg-dark: #f0f2f5; /* Light grey for sections */
+    --bg-dark: #f0f2f5; /* Light grey for subtle separation */
 
     /* Font families */
     --font-heading: 'Montserrat', sans-serif;
@@ -30,7 +30,7 @@ body {
 
 /* Global Container for content width */
 .container {
-    max-width: 1100px;
+    max-width: 1100px; /* Keep this width for better text line length */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -41,27 +41,29 @@ h1, h2, h3 {
     color: var(--primary-color);
     margin-bottom: 0.8em;
     line-height: 1.2;
+    font-weight: 700; /* Ensure headings are bold */
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: 3.8em; /* Make hero headline more impactful */
     color: var(--text-color-light); /* Hero text is light */
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2.8em; /* Slightly larger section headings */
     text-align: center;
     margin-bottom: 1.5em;
     padding-top: 1em; /* Space from section top */
 }
 
 h3 {
-    font-size: 1.8em;
-    color: var(--text-color-dark);
+    font-size: 1.9em; /* Slightly larger subheadings */
+    color: var(--primary-color); /* Use primary color for section subheadings */
 }
 
 p {
     margin-bottom: 1em;
+    font-size: 1.1em; /* Make body text a bit larger for readability */
 }
 
 a {
@@ -78,7 +80,7 @@ a:hover {
     display: inline-block;
     background-color: var(--accent-color);
     color: var(--text-color-light);
-    padding: 12px 25px;
+    padding: 12px 28px; /* Slightly larger padding */
     border-radius: 5px;
     transition: background-color 0.3s ease;
     margin-top: 1em;
@@ -88,10 +90,11 @@ a:hover {
     letter-spacing: 0.5px;
     border: none;
     cursor: pointer;
+    font-size: 1.1em; /* Make button text slightly larger */
 }
 
 .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #d86810; /* Darker orange on hover */
     text-decoration: none;
 }
 
@@ -99,7 +102,7 @@ a:hover {
     background-color: var(--primary-color);
 }
 .btn-primary:hover {
-    background-color: #004494;
+    background-color: #003366;
 }
 
 .btn-secondary {
@@ -112,7 +115,7 @@ a:hover {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent for hero image */
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly darker overlay for nav */
     padding: 15px 0;
     position: absolute; /* Position over hero image */
     width: 100%;
@@ -141,7 +144,7 @@ a:hover {
 }
 
 .navbar .nav-links li {
-    margin-left: 30px;
+    margin-left: 35px; /* Slightly more space for nav links */
 }
 
 .navbar .nav-links a {
@@ -159,7 +162,7 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: url('https://via.placeholder.com/1920x800?text=Your+Hero+Image+Here') no-repeat center center/cover;
+    background: url('https://via.placeholder.com/1920x800?text=Dynamic+Product+Background') no-repeat center center/cover; /* Updated placeholder text */
     color: var(--text-color-light);
     height: 600px;
     display: flex;
@@ -177,25 +180,27 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
 }
 
 .hero-content {
     position: relative; /* Bring content above overlay */
     z-index: 1;
-    max-width: 800px;
+    max-width: 900px; /* Allow hero content to be slightly wider */
 }
 
 .hero-content h1 {
-    font-size: 3.5em;
+    font-size: 4em; /* Even more impactful headline */
     margin-bottom: 0.2em;
     color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for readability */
 }
 
 .hero-content p {
-    font-size: 1.4em;
-    margin-bottom: 1.5em;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5em; /* Larger sub-headline */
+    margin-bottom: 1.8em;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300; /* Lighter weight for sub-headline */
 }
 
 
@@ -206,28 +211,59 @@ a:hover {
 }
 
 .about-section {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light); /* Ensure this is white, not grey */
+    padding-bottom: 40px; /* Less padding at the bottom if next section is also white */
 }
 
-.about-content,
+/* Adjusted for a 2-column grid in about section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Text takes 2 parts, image 1 part */
+    gap: 40px;
+    align-items: center;
+    padding-top: 40px; /* Space from section title */
+}
+
+.about-text h2 {
+    text-align: left; /* Align heading left for this section */
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    padding-top: 0;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Make image round if preferred for a headshot */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--accent-color); /* A pop of accent color around the image */
+    object-fit: cover; /* Ensures image covers the space without distortion */
+    width: 300px; /* Fixed width to make it a nice circle */
+    height: 300px; /* Fixed height */
+}
+
+.personality-section {
+    background-color: var(--bg-dark); /* Subtle background for this section */
+    padding-top: 60px; /* Adjust padding */
+    padding-bottom: 60px;
+}
+
 .personality-content {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-direction: row-reverse; /* Image on right, text on left */
 }
 
-.about-text,
-.personality-text {
-    flex: 2; /* Take more space than image */
-}
-
-.about-image,
 .personality-image {
-    flex: 1; /* Image takes less space */
+    flex: 1;
     text-align: center;
 }
 
-.about-image img,
 .personality-image img {
     max-width: 100%;
     height: auto;
@@ -235,13 +271,8 @@ a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.personality-section {
-    background-color: var(--bg-dark); /* Subtle background for this section */
-}
-
-/* Reverse order for personality section */
-.personality-content {
-    flex-direction: row-reverse;
+.personality-text {
+    flex: 2;
 }
 
 .services-section {
@@ -325,14 +356,23 @@ a:hover {
     .hero-content {
         padding-top: 80px; /* Adjust for no nav */
     }
-    .about-content,
+    .about-grid,
     .personality-content {
-        flex-direction: column; /* Stack content on small screens */
+        grid-template-columns: 1fr; /* Stack on small screens */
+        flex-direction: column; /* Ensure proper stacking for flex items */
         text-align: center;
+    }
+    .about-text,
+    .personality-text {
+        order: 2; /* Text after image on small screens */
     }
     .about-image,
     .personality-image {
+        order: 1; /* Image before text on small screens */
         margin-bottom: 20px;
+    }
+    .about-text h2 {
+        text-align: center; /* Center heading on small screens */
     }
     .btn {
         margin-right: 0;
