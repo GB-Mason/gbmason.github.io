@@ -307,14 +307,15 @@ a:hover {
 
 /* Footer */
 .footer {
-    background-color: var(--text-color-dark);
-    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--bg-dark); /* CHANGED: Lighter grey background */
+    color: var(--text-color-dark); /* CHANGED: Darker text for readability on light background */
     padding: 30px 0;
     text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Optional: A subtle border at the top */
 }
 
 .footer .social-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--primary-color); /* CHANGED: Primary color for icons */
     font-size: 1.8em;
     margin: 0 10px;
     transition: color 0.3s ease;
